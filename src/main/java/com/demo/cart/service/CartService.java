@@ -21,8 +21,7 @@ public class CartService {
                 ? COUPON_DISCOUNT_PERCENT
                 : 0;
 
-        // BUG: integer division - discountPercent / 100 always evaluates to 0
-        double discount = subtotal * (discountPercent / 100);
+        double discount = subtotal * (discountPercent / 100.0);
 
         double total = subtotal - discount;
 
